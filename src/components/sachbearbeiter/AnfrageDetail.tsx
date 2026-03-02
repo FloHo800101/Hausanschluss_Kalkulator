@@ -15,14 +15,6 @@ function InfoRow({ label, value }: { label: string; value: React.ReactNode }) {
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="bg-white rounded-xl border border-gray-200 p-5">
-      <h3 className="font-semibold text-gray-700 mb-3">{title}</h3>
-      <dl>{children}</dl>
-    </div>
-  );
-}
 
 // ─── Eingabefelder für Edit-Modus ─────────────────────────────────────────────
 
