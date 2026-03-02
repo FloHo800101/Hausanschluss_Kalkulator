@@ -211,6 +211,93 @@ function SchrittKontakt({
   );
 }
 
+// ─── Trassen-Infografik ────────────────────────────────────────────────────────
+
+function TrassenDiagramm() {
+  return (
+    <div className="rounded-xl border border-blue-100 bg-white overflow-hidden">
+      <p className="text-xs font-medium text-gray-500 px-3 pt-2">Wo messe ich die Längen?</p>
+      <svg viewBox="0 0 560 158" xmlns="http://www.w3.org/2000/svg" className="w-full">
+        {/* Hintergrund */}
+        <rect width="560" height="158" fill="white" />
+        <rect x="0" y="0" width="560" height="97" fill="#F8FAFC" />
+
+        {/* Straße */}
+        <rect x="0" y="83" width="192" height="27" fill="#9CA3AF" />
+        <line x1="0" y1="96" x2="186" y2="96" stroke="white" strokeWidth="2.5" strokeDasharray="18,12" opacity="0.6" />
+
+        {/* Bordstein */}
+        <rect x="184" y="81" width="10" height="29" fill="#D1D5DB" />
+
+        {/* Garten */}
+        <rect x="194" y="94" width="366" height="16" fill="#BBF7D0" />
+
+        {/* Bodenlinie */}
+        <line x1="0" y1="110" x2="560" y2="110" stroke="#9CA3AF" strokeWidth="1.5" />
+
+        {/* Auto */}
+        <rect x="18" y="69" width="95" height="22" fill="#4B5563" rx="5" />
+        <rect x="36" y="57" width="58" height="16" fill="#374151" rx="4" />
+        <rect x="39" y="59" width="52" height="12" fill="#BAE6FD" rx="2" opacity="0.75" />
+        <circle cx="36" cy="91" r="10" fill="#1F2937" />
+        <circle cx="36" cy="91" r="5.5" fill="#9CA3AF" />
+        <circle cx="99" cy="91" r="10" fill="#1F2937" />
+        <circle cx="99" cy="91" r="5.5" fill="#9CA3AF" />
+
+        {/* Baum */}
+        <rect x="254" y="79" width="8" height="31" fill="#92400E" />
+        <ellipse cx="258" cy="66" rx="22" ry="20" fill="#4ADE80" />
+
+        {/* Haus – Dach */}
+        <polygon points="325,71 430,34 535,71" fill="#93C5FD" />
+        {/* Haus – Wand */}
+        <rect x="335" y="71" width="190" height="39" fill="#BFDBFE" />
+        {/* Tür */}
+        <rect x="415" y="90" width="22" height="20" fill="#1D4ED8" rx="2" />
+        {/* Fenster links */}
+        <rect x="350" y="79" width="28" height="22" fill="#E0F2FE" stroke="#93C5FD" strokeWidth="1.5" rx="1" />
+        <line x1="364" y1="79" x2="364" y2="101" stroke="#93C5FD" strokeWidth="1" />
+        <line x1="350" y1="90" x2="378" y2="90" stroke="#93C5FD" strokeWidth="1" />
+        {/* Fenster rechts */}
+        <rect x="480" y="79" width="28" height="22" fill="#E0F2FE" stroke="#93C5FD" strokeWidth="1.5" rx="1" />
+        <line x1="494" y1="79" x2="494" y2="101" stroke="#93C5FD" strokeWidth="1" />
+        <line x1="480" y1="90" x2="508" y2="90" stroke="#93C5FD" strokeWidth="1" />
+
+        {/* Grundstücksgrenze – gestrichelt */}
+        <line x1="194" y1="2" x2="194" y2="148" stroke="#3B82F6" strokeWidth="2" strokeDasharray="7,5" />
+
+        {/* Unterirdischer Bereich */}
+        <rect x="0" y="111" width="560" height="47" fill="#FFFBEB" />
+
+        {/* Blaue Leitung – öffentlicher Grund */}
+        <rect x="10" y="119" width="179" height="14" fill="#2563EB" rx="3" />
+        <circle cx="10" cy="126" r="5" fill="#1E3A8A" />
+        <text x="99" y="129" textAnchor="middle" fontSize="8.5" fill="white" fontWeight="bold" fontFamily="system-ui,sans-serif">Öffentlicher Grund</text>
+
+        {/* Rote Leitung – Privatgrund */}
+        <rect x="194" y="119" width="241" height="14" fill="#DC2626" rx="3" />
+        <line x1="435" y1="111" x2="435" y2="155" stroke="#374151" strokeWidth="2.5" />
+        <text x="314" y="129" textAnchor="middle" fontSize="8.5" fill="white" fontWeight="bold" fontFamily="system-ui,sans-serif">Privatgrund</text>
+
+        {/* Doppelpfeil blau */}
+        <line x1="10" y1="144" x2="190" y2="144" stroke="#2563EB" strokeWidth="1.5" />
+        <polygon points="10,141 10,147 3,144" fill="#2563EB" />
+        <polygon points="190,141 190,147 197,144" fill="#2563EB" />
+
+        {/* Doppelpfeil rot */}
+        <line x1="198" y1="144" x2="433" y2="144" stroke="#DC2626" strokeWidth="1.5" />
+        <polygon points="198,141 198,147 191,144" fill="#DC2626" />
+        <polygon points="433,141 433,147 440,144" fill="#DC2626" />
+
+        {/* Labels */}
+        <text x="96" y="19" textAnchor="middle" fontSize="10" fill="#6B7280" fontWeight="600" fontFamily="system-ui,sans-serif">Straße</text>
+        <text x="370" y="19" textAnchor="middle" fontSize="10" fill="#6B7280" fontWeight="600" fontFamily="system-ui,sans-serif">Privatgrundstück</text>
+        <text x="194" y="156" textAnchor="middle" fontSize="8" fill="#3B82F6" fontFamily="system-ui,sans-serif">Grundstücksgrenze</text>
+      </svg>
+    </div>
+  );
+}
+
 // ─── Schritt 2: Anschlussdetails ─────────────────────────────────────────────
 
 const SPARTEN: { value: Sparte; label: string; sub: string }[] = [
@@ -346,6 +433,9 @@ function SchrittAnschluss({
           ))}
         </div>
       </div>
+
+      {/* Infografik Trasse */}
+      <TrassenDiagramm />
 
       {/* Trassenlängen */}
       <div className="space-y-4">
@@ -627,16 +717,15 @@ export default function Kundenportal() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-6 py-4">
-        <div className="max-w-2xl mx-auto flex items-center gap-3">
-          <a href="#/" className="flex items-center gap-3 hover:opacity-75 transition-opacity">
-            <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center">
-              <span className="text-white text-lg">⚡</span>
+      <header className="bg-slate-800">
+        <div className="max-w-2xl mx-auto px-6 py-4 flex items-center gap-3">
+          <a href="#/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8 bg-white/10 flex items-center justify-center">
+              <span className="text-white text-sm font-bold">N</span>
             </div>
-            <div>
-              <span className="font-bold text-gray-900">Netz-KA GmbH</span>
-              <span className="text-gray-400 text-sm ml-2">· Hausanschluss-Portal</span>
-            </div>
+            <span className="font-semibold text-white tracking-tight">Netz-KA GmbH</span>
+            <span className="text-white/30 mx-1">|</span>
+            <span className="text-sm text-slate-300">Hausanschluss-Portal</span>
           </a>
         </div>
       </header>

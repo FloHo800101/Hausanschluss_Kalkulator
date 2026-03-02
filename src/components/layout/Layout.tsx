@@ -29,20 +29,20 @@ export default function Layout({ children, navItems, title }: LayoutProps) {
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       {/* Sidebar */}
-      <aside className={cn('flex flex-col bg-blue-950 text-white transition-all duration-200', sidebarOpen ? 'w-64' : 'w-16')}>
+      <aside className={cn('flex flex-col bg-slate-800 text-white transition-all duration-200', sidebarOpen ? 'w-64' : 'w-16')}>
         {/* Logo */}
         <button
           onClick={handleLogout}
-          className="flex items-center gap-3 px-4 py-5 border-b border-blue-900 hover:bg-blue-900 transition-colors w-full text-left cursor-pointer"
+          className="flex items-center gap-3 px-4 py-5 border-b border-slate-700 hover:bg-slate-700 transition-colors w-full text-left cursor-pointer"
           title="Zur Startseite"
         >
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-700 shrink-0">
-            <span className="text-sm">⚡</span>
+          <div className="flex items-center justify-center w-8 h-8 bg-white/10 shrink-0">
+            <span className="text-sm font-bold">N</span>
           </div>
           {sidebarOpen && (
             <div className="overflow-hidden">
-              <div className="font-bold text-sm leading-tight">Netz-KA GmbH</div>
-              <div className="text-xs text-blue-400">HA-Kalkulator</div>
+              <div className="font-semibold text-sm leading-tight tracking-tight">Netz-KA GmbH</div>
+              <div className="text-xs text-slate-400">HA-Kalkulator</div>
             </div>
           )}
         </button>
@@ -58,8 +58,8 @@ export default function Layout({ children, navItems, title }: LayoutProps) {
                 cn(
                   'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors',
                   isActive
-                    ? 'bg-blue-700 text-white'
-                    : 'text-blue-200 hover:bg-blue-900 hover:text-white',
+                    ? 'bg-slate-600 text-white'
+                    : 'text-slate-300 hover:bg-slate-700 hover:text-white',
                 )
               }
             >
@@ -68,7 +68,7 @@ export default function Layout({ children, navItems, title }: LayoutProps) {
                 <span className="flex-1 truncate">{item.label}</span>
               )}
               {sidebarOpen && item.badge !== undefined && item.badge > 0 && (
-                <span className="ml-auto bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="ml-auto bg-slate-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {item.badge}
                 </span>
               )}
@@ -77,19 +77,19 @@ export default function Layout({ children, navItems, title }: LayoutProps) {
         </nav>
 
         {/* User / Logout */}
-        <div className="border-t border-blue-900 p-3">
+        <div className="border-t border-slate-700 p-3">
           <div className={cn('flex items-center gap-3', sidebarOpen ? '' : 'justify-center')}>
-            <div className="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center text-sm font-bold shrink-0">
+            <div className="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center text-sm font-bold shrink-0">
               {currentUser?.name.charAt(0)}
             </div>
             {sidebarOpen && (
               <div className="flex-1 overflow-hidden">
                 <div className="text-xs font-medium truncate">{currentUser?.name}</div>
-                <div className="text-xs text-blue-400 capitalize">{currentUser?.rolle}</div>
+                <div className="text-xs text-slate-400 capitalize">{currentUser?.rolle}</div>
               </div>
             )}
             {sidebarOpen && (
-              <button onClick={handleLogout} title="Abmelden" className="text-blue-400 hover:text-white transition-colors cursor-pointer">
+              <button onClick={handleLogout} title="Abmelden" className="text-slate-400 hover:text-white transition-colors cursor-pointer">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                 </svg>

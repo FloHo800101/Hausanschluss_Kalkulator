@@ -79,13 +79,13 @@ export function druckeKalkulationPDF(anfrage: Anfrage, kalkulation: Kalkulation)
   }
 
   // --- Positionsliste Header ---
-  rect(marginL, y, contentW, 7, [30, 64, 175]);
-  text('POSITION', marginL + 2, y + 5, { fontSize: 8, bold: true, color: [255, 255, 255] });
-  text('MENGE', marginL + contentW * 0.6, y + 5, { fontSize: 8, bold: true, color: [255, 255, 255], align: 'right' });
-  text('EINHEIT', marginL + contentW * 0.68, y + 5, { fontSize: 8, bold: true, color: [255, 255, 255] });
-  text('EINZELPREIS', marginL + contentW * 0.83, y + 5, { fontSize: 8, bold: true, color: [255, 255, 255], align: 'right' });
-  text('GESAMT', pageW - marginR, y + 5, { fontSize: 8, bold: true, color: [255, 255, 255], align: 'right' });
-  y += 9;
+  rect(marginL, y, contentW, 9, [30, 64, 175]);
+  text('POSITION', marginL + 2, y + 6, { fontSize: 8, bold: true, color: [255, 255, 255] });
+  text('MENGE', marginL + contentW * 0.60, y + 6, { fontSize: 8, bold: true, color: [255, 255, 255], align: 'right' });
+  text('EINHEIT', marginL + contentW * 0.63, y + 6, { fontSize: 8, bold: true, color: [255, 255, 255] });
+  text('EINZELPREIS', marginL + contentW * 0.87, y + 6, { fontSize: 8, bold: true, color: [255, 255, 255], align: 'right' });
+  text('GESAMT', pageW - marginR, y + 6, { fontSize: 8, bold: true, color: [255, 255, 255], align: 'right' });
+  y += 11;
 
   // --- Positionen ---
   const KATEGORIE_COLORS: Record<string, [number, number, number]> = {
@@ -110,9 +110,9 @@ export function druckeKalkulationPDF(anfrage: Anfrage, kalkulation: Kalkulation)
     }
     rect(marginL, y - 4, contentW, 6, bg);
     text(pos.bezeichnung, marginL + 2, y, { fontSize: 8.5 });
-    text(String(pos.menge), marginL + contentW * 0.6, y, { fontSize: 8.5, align: 'right' });
-    text(pos.einheit, marginL + contentW * 0.68 + 2, y, { fontSize: 8.5 });
-    text(euro(pos.einzelpreis), marginL + contentW * 0.83, y, { fontSize: 8.5, align: 'right' });
+    text(String(pos.menge), marginL + contentW * 0.60, y, { fontSize: 8.5, align: 'right' });
+    text(pos.einheit, marginL + contentW * 0.63 + 2, y, { fontSize: 8.5 });
+    text(euro(pos.einzelpreis), marginL + contentW * 0.87, y, { fontSize: 8.5, align: 'right' });
     text(euro(pos.gesamtpreis), pageW - marginR, y, { fontSize: 8.5, align: 'right' });
     y += 6;
   }

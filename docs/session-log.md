@@ -1,5 +1,20 @@
 # Session-Log – Hausanschluss-Kalkulator
 
+## 2026-03-02 (Session 2)
+**Erledigt:**
+- PDF-Fix: Spalten EINHEIT/EINZELPREIS überlappten → Proportionen angepasst (0.63 / 0.87)
+- PDF-Fix: Tabellen-Kopfzeile zu klein → auf 9mm vergrößert, Text-Baseline auf y+6 zentriert
+- Kundenportal: SVG-Infografik `TrassenDiagramm` eingebaut (zwischen Gebäudetyp und Längen-Slidern)
+  - Zeigt Straße, Auto, Baum, Haus, Grundstücksgrenze (gestrichelt), unterirdische Leitungen mit Bemaßung
+- Fachliche Diskussion: Anschlussart Änderung/Stilllegung → andere Pflichtfelder sinnvoll (Umsetzung offen)
+- Nutzungs-Tracking für GitHub Pages besprochen (GA4, GoatCounter, Cloudflare) → zurückgestellt
+
+**Offen / Nächste Schritte:**
+- Anschlussart-spezifische Formularfelder im Portal (Änderung: Zählernummer + Art d. Änderung; Stilllegung: nur Zählernummer)
+- MSH-Spartenwahl im Edit-Modus noch nicht abgedeckt
+- Persistenz / Backend fehlt noch
+- Einfaches Nutzungs-Tracking – in Überlegung
+
 ## 2026-03-02
 **Erledigt:**
 - Preisanpassung in Kalkulation: editierbare Mengen/Einzelpreise, manuelle Positionen (inkl. Abzugspositionen), Gesamtrabatt in %
