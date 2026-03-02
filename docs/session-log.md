@@ -1,5 +1,20 @@
 # Session-Log – Hausanschluss-Kalkulator
 
+## 2026-03-02
+**Erledigt:**
+- Preisanpassung in Kalkulation: editierbare Mengen/Einzelpreise, manuelle Positionen (inkl. Abzugspositionen), Gesamtrabatt in %
+- Typen erweitert: `KalkulationsPosition.manuell`, `Kalkulation.rabattProzent`, Kategorie `'Manuell'`
+- Einheiten-Bug gefixt: `'Pau'` → `'Pauschale'`, `'St'` → `'Stück'`
+- GitHub Repo erstellt: https://github.com/FloHo800101/Hausanschluss_Kalkulator
+- GitHub Pages deployt (HashRouter + Vite base): https://floho800101.github.io/Hausanschluss_Kalkulator/
+- GitHub Actions Workflow (`.github/workflows/deploy.yml`) – deploy bei jedem Push auf main
+- TS-Buildfehler behoben (ungenutztes `Section`-Component in AnfrageDetail)
+
+**Offen / Nächste Schritte:**
+- MSH-Spartenwahl im Edit-Modus noch nicht abgedeckt
+- Persistenz / Backend fehlt noch
+
+
 ## 2026-03-01
 **Erledigt:**
 - Kundenportal (`/portal`) mit 3-Stufen-Wizard implementiert (Kontaktdaten → Anschlussdetails → Kostenschätzung)
